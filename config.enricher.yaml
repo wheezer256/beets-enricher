@@ -1,0 +1,17 @@
+# Add these lines to your existing config.yaml
+
+# 1. Add the path where you'll store enricher.py
+pluginpath:
+    - /config/plugins
+
+# 2. Add 'enricher' to your plugins list
+plugins:
+    - ... # your other plugins
+    - enricher
+
+# 3. Configure the enricher
+enricher:
+    auto: yes                   # Automatically run on 'beet import'
+    model: gemini-1.5-pro       # Recommended for audio analysis
+    api_key: ${GEMINI_API_KEY}  # Uses environment variable for security
+    # use_vertex: no            # Default (consumer account)
